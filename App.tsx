@@ -1,8 +1,9 @@
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import React, { useCallback, useEffect } from 'react';
-import { View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+import { Layout } from './src/components/layout';
 import { Home } from './src/screens';
 
 export default function App() {
@@ -33,8 +34,10 @@ export default function App() {
 	}
 
 	return (
-		<View onLayout={onLayoutRootView}>
-			<Home />
-		</View>
+		<SafeAreaProvider>
+			<Layout onLayout={onLayoutRootView}>
+				<Home />
+			</Layout>
+		</SafeAreaProvider>
 	);
 }
