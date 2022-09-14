@@ -14,7 +14,7 @@ export const Input = () => {
 			<Ionicons
 				name='search-outline'
 				size={height * 0.04}
-				color={colors.dark}
+				color={colors.gray}
 			/>
 
 			<Divider size={0.025} />
@@ -22,7 +22,7 @@ export const Input = () => {
 			<TextInput
 				style={styles.input}
 				placeholder='Search Tech'
-				placeholderTextColor={colors.dark}
+				placeholderTextColor={colors.gray}
 			/>
 		</View>
 	);
