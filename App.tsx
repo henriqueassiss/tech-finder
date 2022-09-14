@@ -3,7 +3,6 @@ import * as SplashScreen from 'expo-splash-screen';
 import React, { useCallback, useEffect } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { Layout } from './src/components/layout';
 import { Home } from './src/screens';
 
 export default function App() {
@@ -35,9 +34,7 @@ export default function App() {
 
 	return (
 		<SafeAreaProvider>
-			<Layout onLayout={onLayoutRootView}>
-				<Home />
-			</Layout>
+			<Home onLayout={onLayoutRootView} />
 		</SafeAreaProvider>
 	);
 }

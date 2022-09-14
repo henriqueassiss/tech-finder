@@ -27,8 +27,8 @@ export const Layout = (props: any) => {
 			onLayout={props.onLayout}>
 			<StatusBar
 				animated
-				barStyle='light-content'
-				backgroundColor={colors.black}
+				barStyle='dark-content'
+				backgroundColor={colors.bright}
 			/>
 			<ScrollView>{props.children}</ScrollView>
 		</SafeAreaView>

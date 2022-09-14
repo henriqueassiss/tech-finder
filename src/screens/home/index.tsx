@@ -1,13 +1,21 @@
 import React from 'react';
-import { View } from 'react-native';
 
-import { Input } from '../../components';
+import { Divider, Input, Layout } from '../../components';
+import { Logo } from '../../components/logo';
 import { styles } from './Style';
 
-export const Home = () => {
+interface IHome {
+	onLayout: () => Promise<void>;
+}
+
+export const Home = ({ onLayout }: IHome) => {
 	return (
-		<View style={styles.container}>
+		<Layout onLayout={onLayout}>
+			<Logo />
+
+			<Divider isHeight size={0.025} />
+
 			<Input />
-		</View>
+		</Layout>
 	);
 };
