@@ -7,7 +7,7 @@ const { width, height } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
 	container: {
-		padding: height * 0.025,
+		padding: height * 0.0275,
 		borderRadius: height * 0.015,
 		backgroundColor: colors.white,
 	},

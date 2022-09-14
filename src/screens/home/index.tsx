@@ -1,9 +1,9 @@
 import React from 'react';
 
 import JS from '../../assets/techs/programmingLanguages/Javascript.png';
-import { Divider, Input, Layout } from '../../components';
+import { Divider, Layout } from '../../components';
 import { Card } from '../../components/card';
-import { Logo } from '../../components/logo';
+import { Header } from './components';
 import { styles } from './Style';
 
 interface IHome {
@@ -13,11 +13,7 @@ interface IHome {
 export const Home = ({ onLayout }: IHome) => {
 	return (
 		<Layout onLayout={onLayout}>
-			<Logo />
-
-			<Divider isHeight size={0.025} />
-
-			<Input />
+			<Header />
 
 			<Divider isHeight size={0.025} />
 
