@@ -2,11 +2,12 @@ import React from 'react';
 import { FlatList, Text } from 'react-native';
 
 import { useInsets } from '../../hooks';
-import { Card, ICard } from '../card';
+import { ITech } from '../../screens';
+import { Card } from '../card';
 import { Divider } from '../divider';
 import { styles } from './Style';
 
-export const ListSection = (props: { cards: ICard[] }) => {
+export const ListSection = (props: { cards: ITech[] }) => {
 	const { left } = useInsets();
 
 	return (
