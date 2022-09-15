@@ -8,6 +8,7 @@ const { width, height } = Dimensions.get('window');
 export const styles = StyleSheet.create({
 	container: {
 		padding: height * 0.0275,
+		width: width - width * 0.15,
 		borderRadius: height * 0.015,
 		backgroundColor: colors.white,
 	},
@@ -18,9 +19,15 @@ export const styles = StyleSheet.create({
 	},
 
 	image: {
+		flex: 1,
 		width: width * 0.15,
 		height: width * 0.15,
+		resizeMode: 'contain',
 		borderRadius: height * 0.01,
+	},
+
+	text: {
+		flex: 3,
 	},
 
 	title: {

@@ -6,44 +6,44 @@ import {
 	TouchableOpacity,
 	View,
 } from 'react-native';
-import { Dimensions } from 'react-native';
 
 import { Divider } from '../divider';
 import { styles } from './Style';
 
-const { height, width } = Dimensions.get('window');
-
-interface ICard {
-	tag: string;
+export interface ICard {
+	image: ImageSourcePropType;
+	title: string;
 	date: string;
 	desc: string;
-	title: string;
-	image: ImageSourcePropType;
+	tag: string;
+	createdBy: string;
 }
 
-export const Card = ({ tag, date, desc, title, image }: ICard) => {
+export const Card = (props: { data: ICard }) => {
 	return (
-		<TouchableOpacity style={styles.container}>
+		<TouchableOpacity style={styles.container} activeOpacity={0.7}>
 			<View style={styles.header}>
-				<Image style={styles.image} source={image} />
+				<Image style={styles.image} source={props.data.image} />
 
 				<Divider size={0.04} />
 
-				<View>
-					<Text style={styles.title}>{title}</Text>
+				<View style={styles.text}>
+					<Text style={styles.title}>{props.data.title}</Text>
 
-					<Text style={styles.date}>{date}</Text>
+					<Text style={styles.date}>{props.data.date}</Text>
 				</View>
 			</View>
 
 			<Divider isHeight size={0.0215} />
 
-			<Text style={styles.desc}>{desc}</Text>
+			<Text style={styles.desc} numberOfLines={3}>
+				{props.data.desc}
+			</Text>
 
 			<Divider isHeight size={0.0215} />
 
 			<View style={styles.tags}>
-				<Text style={styles.tag}>{tag}</Text>
+				<Text style={styles.tag}>{props.data.tag}</Text>
 			</View>
 		</TouchableOpacity>
 	);

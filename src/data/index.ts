@@ -1,2 +1,2 @@
-export * from './programmingLanguages/Cards';
-export * from './programmingLanguages/Pages';
+export * from './Libraries';
+export * from './ProgrammingLanguages';
