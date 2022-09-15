@@ -6,16 +6,23 @@ import { colors } from '../../utils/Constants';
 const { height } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
-	container: {
-		borderRadius: height * 0.0075,
-		paddingVertical: height * 0.01,
-		backgroundColor: colors.bright,
-		paddingHorizontal: height * 0.0175,
-	},
-
 	text: {
 		color: colors.black,
+		borderRadius: height * 0.0075,
+		backgroundColor: colors.bright,
+	},
+
+	small: {
 		fontSize: RFValue(12),
 		fontFamily: 'Poppins-Regular',
+		paddingVertical: height * 0.0075,
+		paddingHorizontal: height * 0.015,
+	},
+
+	big: {
+		fontSize: RFValue(14),
+		fontFamily: 'Poppins-Medium',
+		paddingVertical: height * 0.01,
+		paddingHorizontal: height * 0.02,
 	},
 });

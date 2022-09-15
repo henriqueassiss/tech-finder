@@ -1,9 +1,17 @@
 import React from 'react';
-import { Image, ImageSourcePropType, Text, View } from 'react-native';
+import {
+	Dimensions,
+	ImageSourcePropType,
+	Text,
+	TouchableOpacity,
+	View,
+} from 'react-native';
 
 import { Divider, Layout } from '../../components';
-import { Tag } from '../../components';
-import { styles } from './Style';
+import { useInsets } from '../../hooks';
+import { Hero } from './components';
+import { Header } from './components/header';
+
 export interface ITech {
 	image: ImageSourcePropType;
 	title: string;
@@ -14,37 +22,15 @@ export interface ITech {
 }
 
 export const Tech = (props: { data: ITech }) => {
+	const insets = useInsets();
+
 	return (
 		<Layout>
-			<View style={styles.hero}>
-				<Image style={styles.image} source={props.data.image} />
+			<Header insets={insets} />
 
-				<Divider isHeight size={0.0175} />
+			<Divider isHeight size={0.075} />
 
-				<Text style={styles.title}>{props.data.title}</Text>
-
-				<View style={styles.foundation}>
-					<Text style={styles.foundationText}>{props.data.date}</Text>
-
-					<Divider size={0.05} />
-
-					<Text style={styles.foundationText}>•</Text>
-
-					<Divider size={0.05} />
-
-					<Text style={styles.foundationText}>
-						{props.data.createdBy}
-					</Text>
-				</View>
-
-				<Divider isHeight size={0.025} />
-
-				<Tag text={props.data.tag} />
-
-				<Divider isHeight size={0.025} />
-
-				<Text style={styles.desc}>{props.data.desc}</Text>
-			</View>
+			<Hero insets={insets} data={props.data} />
 		</Layout>
 	);
 };

@@ -1,12 +1,18 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
 
 import { styles } from './Style';
 
-export const Tag = (props: { text: string }) => {
+interface ITag {
+	text: string;
+	type?: 'big' | 'small';
+}
+
+export const Tag = ({ text, type = 'small' }: ITag) => {
 	return (
-		<View style={styles.container}>
-			<Text style={styles.text}>{props.text}</Text>
-		</View>
+		<Text
+			style={[styles.text, type === 'small' ? styles.small : styles.big]}>
+			{text}
+		</Text>
 	);
 };

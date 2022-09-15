@@ -1,12 +1,12 @@
 import { Dimensions, StyleSheet } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 
-import { colors } from '../../utils/Constants';
+import { colors } from '../../../../utils/Constants';
 
 const { width, height } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
-	hero: {
+	container: {
 		alignItems: 'center',
 		padding: height * 0.0275,
 		borderRadius: height * 0.015,
@@ -14,8 +14,10 @@ export const styles = StyleSheet.create({
 	},
 
 	image: {
-		width: height * 0.1,
-		height: height * 0.1,
+		top: -32,
+		width: height * 0.125,
+		height: height * 0.125,
+		position: 'absolute',
 		resizeMode: 'contain',
 		borderRadius: height * 0.01,
 		backgroundColor: colors.black,
@@ -23,7 +25,7 @@ export const styles = StyleSheet.create({
 
 	title: {
 		color: colors.black,
-		fontSize: RFValue(24),
+		fontSize: RFValue(28),
 		fontFamily: 'Poppins-SemiBold',
 	},
 

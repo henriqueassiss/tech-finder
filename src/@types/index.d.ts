@@ -8,3 +8,10 @@ declare module '*.jpg' {
 	const value: ImageSourcePropType;
 	export default value;
 }
+
+interface IInsets {
+	top: number;
+	left: number;
+	right: number;
+	bottom: number;
+}
