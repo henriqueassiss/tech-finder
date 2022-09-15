@@ -4,10 +4,10 @@
     "slug": "tech-finder",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/brand/Logo.png",
+    "icon": "./src/assets/brand/Icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./src/assets/brand/Splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -22,12 +22,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/brand/Logo.png",
+        "foregroundImage": "./src/assets/brand/Icon.png",
         "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
-      "favicon": "./src/assets/brand/Logo.png"
+      "favicon": "./src/assets/brand/Icon.png"
     }
   }
 }
