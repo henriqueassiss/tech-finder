@@ -2,9 +2,9 @@ import C from '../assets/techs/programmingLanguages/C.png';
 import CPlusPlus from '../assets/techs/programmingLanguages/CPlusPlus.png';
 import CSharp from '../assets/techs/programmingLanguages/CSharp.png';
 import Javascript from '../assets/techs/programmingLanguages/Javascript.png';
-import { ICard } from '../components';
+import { ITech } from '../screens/tech';
 
-export const programmingLanguages: ICard[] = [
+export const programmingLanguages: ITech[] = [
 	{
 		image: C,
 		title: 'C',

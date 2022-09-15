@@ -1,7 +1,7 @@
 import React from '../assets/techs/libraries/React.png';
-import { ICard } from '../components';
+import { ITech } from '../screens/tech';
 
-export const libraries: ICard[] = [
+export const libraries: ITech[] = [
 	{
 		image: React,
 		title: 'ReactJS',

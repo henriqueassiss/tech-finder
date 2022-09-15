@@ -5,13 +5,9 @@ import { ListSection } from '../../components/listSection';
 import { libraries, programmingLanguages } from '../../data';
 import { Header } from './components';
 
-interface IHome {
-	onLayout: () => Promise<void>;
-}
-
-export const Home = ({ onLayout }: IHome) => {
+export const Home = () => {
 	return (
-		<Layout onLayout={onLayout}>
+		<Layout>
 			<Header />
 
 			<Divider isHeight size={0.025} />

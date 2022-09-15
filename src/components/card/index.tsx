@@ -1,25 +1,11 @@
 import React from 'react';
-import {
-	Image,
-	ImageSourcePropType,
-	Text,
-	TouchableOpacity,
-	View,
-} from 'react-native';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 
+import { ITech } from '../../screens/tech';
 import { Divider } from '../divider';
 import { styles } from './Style';
 
-export interface ICard {
-	image: ImageSourcePropType;
-	title: string;
-	date: string;
-	desc: string;
-	tag: string;
-	createdBy: string;
-}
-
-export const Card = (props: { data: ICard }) => {
+export const Card = (props: { data: ITech }) => {
 	return (
 		<TouchableOpacity style={styles.container} activeOpacity={0.7}>
 			<View style={styles.header}>

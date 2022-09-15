@@ -3,7 +3,8 @@ import * as SplashScreen from 'expo-splash-screen';
 import React, { useCallback, useEffect } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { Home } from './src/screens';
+import ReactJS from './src/assets/techs/libraries/React.png';
+import { Tech } from './src/screens';
 
 export default function App() {
 	const [fontsLoaded] = useFonts({
@@ -33,8 +34,17 @@ export default function App() {
 	}
 
 	return (
-		<SafeAreaProvider>
-			<Home onLayout={onLayoutRootView} />
+		<SafeAreaProvider onLayout={onLayoutRootView}>
+			<Tech
+				data={{
+					image: ReactJS,
+					title: 'ReactJS',
+					date: '2013',
+					desc: 'asdasdasdasdasdasdasdasdas',
+					tag: 'Library',
+					createdBy: 'Facebook',
+				}}
+			/>
 		</SafeAreaProvider>
 	);
 }
