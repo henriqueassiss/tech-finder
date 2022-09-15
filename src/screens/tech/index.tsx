@@ -2,6 +2,7 @@ import React from 'react';
 import { Image, ImageSourcePropType, Text, View } from 'react-native';
 
 import { Divider, Layout } from '../../components';
+import { Tag } from '../../components';
 import { styles } from './Style';
 export interface ITech {
 	image: ImageSourcePropType;
@@ -38,7 +39,7 @@ export const Tech = (props: { data: ITech }) => {
 
 				<Divider isHeight size={0.025} />
 
-				<Text>{props.data.tag}</Text>
+				<Tag text={props.data.tag} />
 
 				<Divider isHeight size={0.025} />
 
