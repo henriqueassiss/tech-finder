@@ -24,6 +24,8 @@ export const Tech = ({ navigation, route }: ITechNavigation) => {
 			<Divider isHeight size={0.075} />
 
 			<Hero data={route.params} />
+
+			<Divider isHeight size={0.025} />
 		</Layout>
 	);
 };

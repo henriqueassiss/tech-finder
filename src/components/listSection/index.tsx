@@ -47,13 +47,23 @@ export const ListSection = ({ cards, navigation }: IListSection) => {
 					} else if (index === cards.length - 1) {
 						return (
 							<>
-								<Card data={item} />
+								<Card
+									data={item}
+									onPress={() =>
+										navigation.navigate('Tech', item)
+									}
+								/>
 								<Divider size={0.04} />
 							</>
 						);
 					}
 
-					return <Card data={item} />;
+					return (
+						<Card
+							data={item}
+							onPress={() => navigation.navigate('Tech', item)}
+						/>
+					);
 				}}
 			/>
 		</>
