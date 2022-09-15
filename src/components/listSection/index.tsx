@@ -1,8 +1,6 @@
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React from 'react';
 import { FlatList, Text } from 'react-native';
 
-import { useInsets } from '../../hooks';
 import { INavigation } from '../../routes';
 import { ITech } from '../../screens';
 import { Card } from '../card';
@@ -10,16 +8,15 @@ import { Divider } from '../divider';
 import { styles } from './Style';
 
 interface IListSection {
-	cards: ITech[];
+	insets: IInsets;
+	cards: ITechData[];
 	navigation: INavigation;
 }
 
-export const ListSection = ({ cards, navigation }: IListSection) => {
-	const { left } = useInsets();
-
+export const ListSection = ({ insets, cards, navigation }: IListSection) => {
 	return (
 		<>
-			<Text style={[styles.title, { marginLeft: left }]}>
+			<Text style={[styles.title, { marginLeft: insets.left }]}>
 				{cards[0].tag}
 			</Text>
 
@@ -32,6 +29,8 @@ export const ListSection = ({ cards, navigation }: IListSection) => {
 				showsHorizontalScrollIndicator={false}
 				ItemSeparatorComponent={() => <Divider size={0.04} />}
 				renderItem={({ item, index }) => {
+					const data: ITech = { data: item, insets };
+
 					if (index === 0) {
 						return (
 							<>
@@ -39,7 +38,7 @@ export const ListSection = ({ cards, navigation }: IListSection) => {
 								<Card
 									data={item}
 									onPress={() =>
-										navigation.navigate('Tech', item)
+										navigation.navigate('Tech', data)
 									}
 								/>
 							</>
@@ -50,7 +49,7 @@ export const ListSection = ({ cards, navigation }: IListSection) => {
 								<Card
 									data={item}
 									onPress={() =>
-										navigation.navigate('Tech', item)
+										navigation.navigate('Tech', data)
 									}
 								/>
 								<Divider size={0.04} />
@@ -61,7 +60,7 @@ export const ListSection = ({ cards, navigation }: IListSection) => {
 					return (
 						<Card
 							data={item}
-							onPress={() => navigation.navigate('Tech', item)}
+							onPress={() => navigation.navigate('Tech', data)}
 						/>
 					);
 				}}

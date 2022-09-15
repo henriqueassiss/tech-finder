@@ -1,5 +1,4 @@
 import React from 'react';
-import { ImageSourcePropType } from 'react-native';
 
 import { Divider, Layout } from '../../components';
 import { ITechNavigation } from '../../routes';
@@ -8,12 +7,7 @@ import { Header } from './components/header';
 
 export interface ITech {
 	insets: IInsets;
-	image: ImageSourcePropType;
-	title: string;
-	date: string;
-	desc: string;
-	tag: string;
-	createdBy: string;
+	data: ITechData;
 }
 
 export const Tech = ({ navigation, route }: ITechNavigation) => {

@@ -15,3 +15,12 @@ interface IInsets {
 	right: number;
 	bottom: number;
 }
+
+interface ITechData {
+	image: ImageSourcePropType;
+	title: string;
+	date: string;
+	desc: string[];
+	tag: string;
+	createdBy: string;
+}

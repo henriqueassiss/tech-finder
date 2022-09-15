@@ -13,11 +13,19 @@ export const Home = ({ navigation, route }: IHomeNavigation) => {
 
 			<Divider isHeight size={0.025} />
 
-			<ListSection cards={programmingLanguages} navigation={navigation} />
+			<ListSection
+				insets={route.params}
+				cards={programmingLanguages}
+				navigation={navigation}
+			/>
 
 			<Divider isHeight size={0.025} />
 
-			<ListSection cards={libraries} navigation={navigation} />
+			<ListSection
+				insets={route.params}
+				cards={libraries}
+				navigation={navigation}
+			/>
 
 			<Divider isHeight size={0.025} />
 		</Layout>

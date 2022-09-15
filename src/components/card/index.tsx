@@ -7,12 +7,11 @@ import {
 	View,
 } from 'react-native';
 
-import { ITech } from '../../screens/tech';
 import { Divider } from '../divider';
 import { styles } from './Style';
 
 interface ICard extends TouchableOpacityProps {
-	data: ITech;
+	data: ITechData;
 }
 
 export const Card = ({ data, ...rest }: ICard) => {
@@ -36,7 +35,7 @@ export const Card = ({ data, ...rest }: ICard) => {
 			<Divider isHeight size={0.0215} />
 
 			<Text style={styles.desc} numberOfLines={3}>
-				{data.desc}
+				{data.desc[0]}
 			</Text>
 
 			<Divider isHeight size={0.0215} />

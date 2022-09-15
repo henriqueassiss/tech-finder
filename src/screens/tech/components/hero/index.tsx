@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Text, View } from 'react-native';
+import { FlatList, Image, Text, View } from 'react-native';
 
 import { Divider, Tag } from '../../../../components';
 import { ITech } from '../..';
@@ -15,17 +15,17 @@ export const Hero = (props: { data: ITech }) => {
 				},
 				styles.container,
 			]}>
-			<Image style={styles.image} source={props.data.image} />
+			<Image style={styles.image} source={props.data.data.image} />
 
 			<Divider isHeight size={0.075} />
 
-			<Text style={styles.title}>{props.data.title}</Text>
+			<Text style={styles.title}>{props.data.data.title}</Text>
 
 			<Divider isHeight size={0.005} />
 
 			<View style={styles.foundation}>
 				<Text style={styles.foundationText}>
-					{props.data.createdBy}
+					{props.data.data.createdBy}
 				</Text>
 
 				<Divider size={0.025} />
@@ -34,16 +34,29 @@ export const Hero = (props: { data: ITech }) => {
 
 				<Divider size={0.025} />
 
-				<Text style={styles.foundationText}>{props.data.date}</Text>
+				<Text style={styles.foundationText}>
+					{props.data.data.date}
+				</Text>
 			</View>
 
 			<Divider isHeight size={0.025} />
 
-			<Tag text={props.data.tag} type='big' />
+			<Tag text={props.data.data.tag} type='big' />
 
 			<Divider isHeight size={0.025} />
 
-			<Text style={styles.desc}>{props.data.desc}</Text>
+			<FlatList
+				scrollEnabled={false}
+				data={props.data.data.desc}
+				renderItem={({ item }) => {
+					return (
+						<>
+							<Text style={styles.desc}>{item}</Text>
+							<Divider isHeight size={0.015} />
+						</>
+					);
+				}}
+			/>
 		</View>
 	);
 };

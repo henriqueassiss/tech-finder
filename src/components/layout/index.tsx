@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StatusBar } from 'react-native';
+import { ScrollView, StatusBar, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { colors } from '../../utils/Constants';
@@ -13,7 +13,11 @@ export const Layout = (props?: any) => {
 				barStyle='dark-content'
 				backgroundColor={colors.bright}
 			/>
-			<ScrollView>{props.children}</ScrollView>
+			{props.fixed ? (
+				<View>{props.children}</View>
+			) : (
+				<ScrollView>{props.children}</ScrollView>
+			)}
 		</SafeAreaView>
 	);
 };
