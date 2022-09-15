@@ -1,25 +1,32 @@
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React from 'react';
 import { FlatList, Text } from 'react-native';
 
 import { useInsets } from '../../hooks';
+import { INavigation } from '../../routes';
 import { ITech } from '../../screens';
 import { Card } from '../card';
 import { Divider } from '../divider';
 import { styles } from './Style';
 
-export const ListSection = (props: { cards: ITech[] }) => {
+interface IListSection {
+	cards: ITech[];
+	navigation: INavigation;
+}
+
+export const ListSection = ({ cards, navigation }: IListSection) => {
 	const { left } = useInsets();
 
 	return (
 		<>
 			<Text style={[styles.title, { marginLeft: left }]}>
-				{props.cards[0].tag}
+				{cards[0].tag}
 			</Text>
 
 			<Divider isHeight size={0.025} />
 
 			<FlatList
-				data={props.cards}
+				data={cards}
 				horizontal
 				keyExtractor={(_, i) => i.toString()}
 				showsHorizontalScrollIndicator={false}
@@ -29,10 +36,15 @@ export const ListSection = (props: { cards: ITech[] }) => {
 						return (
 							<>
 								<Divider size={0.04} />
-								<Card data={item} />
+								<Card
+									data={item}
+									onPress={() =>
+										navigation.navigate('Tech', item)
+									}
+								/>
 							</>
 						);
-					} else if (index === props.cards.length - 1) {
+					} else if (index === cards.length - 1) {
 						return (
 							<>
 								<Card data={item} />

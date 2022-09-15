@@ -5,13 +5,13 @@ import { Divider, Tag } from '../../../../components';
 import { ITech } from '../..';
 import { styles } from './Style';
 
-export const Hero = (props: { data: ITech; insets: IInsets }) => {
+export const Hero = (props: { data: ITech }) => {
 	return (
 		<View
 			style={[
 				{
-					marginLeft: props.insets.left,
-					marginRight: props.insets.right,
+					marginLeft: props.data.insets.left,
+					marginRight: props.data.insets.right,
 				},
 				styles.container,
 			]}>

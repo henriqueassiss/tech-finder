@@ -2,18 +2,14 @@ import React from 'react';
 import { View } from 'react-native';
 
 import { Divider, Input, Logo } from '../../../../components';
-import { useInsets } from '../../../../hooks';
 
-export const Header = () => {
-	const { top, left, right, bottom } = useInsets();
-
+export const Header = (props: { insets: IInsets }) => {
 	return (
 		<View
 			style={{
-				paddingTop: top,
-				paddingLeft: left,
-				paddingRight: right,
-				paddingBottom: bottom,
+				marginTop: props.insets.top,
+				marginLeft: props.insets.left,
+				marginRight: props.insets.right,
 			}}>
 			<Logo />
 

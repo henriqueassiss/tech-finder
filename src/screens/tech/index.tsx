@@ -1,18 +1,13 @@
 import React from 'react';
-import {
-	Dimensions,
-	ImageSourcePropType,
-	Text,
-	TouchableOpacity,
-	View,
-} from 'react-native';
+import { ImageSourcePropType } from 'react-native';
 
 import { Divider, Layout } from '../../components';
-import { useInsets } from '../../hooks';
+import { ITechNavigation } from '../../routes';
 import { Hero } from './components';
 import { Header } from './components/header';
 
 export interface ITech {
+	insets: IInsets;
 	image: ImageSourcePropType;
 	title: string;
 	date: string;
@@ -21,16 +16,14 @@ export interface ITech {
 	createdBy: string;
 }
 
-export const Tech = (props: { data: ITech }) => {
-	const insets = useInsets();
-
+export const Tech = ({ navigation, route }: ITechNavigation) => {
 	return (
 		<Layout>
-			<Header insets={insets} />
+			<Header insets={route.params.insets} goBack={navigation.pop} />
 
 			<Divider isHeight size={0.075} />
 
-			<Hero insets={insets} data={props.data} />
+			<Hero data={route.params} />
 		</Layout>
 	);
 };

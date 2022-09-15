@@ -7,16 +7,23 @@ import { styles } from './Style';
 
 const { height } = Dimensions.get('window');
 
-export const Header = (props: { insets: IInsets }) => {
+interface IHeader {
+	insets: IInsets;
+	goBack: (count?: number | undefined) => void;
+}
+
+export const Header = ({ insets, goBack }: IHeader) => {
 	return (
 		<View
 			style={{
-				marginTop: props.insets.top,
-				marginLeft: props.insets.left,
-				marginRight: props.insets.right,
-				marginBottom: props.insets.bottom,
+				marginTop: insets.top,
+				marginLeft: insets.left,
+				marginRight: insets.right,
 			}}>
-			<TouchableOpacity style={styles.pop} activeOpacity={0.7}>
+			<TouchableOpacity
+				style={styles.pop}
+				activeOpacity={0.7}
+				onPress={() => goBack()}>
 				<Ionicons
 					name='chevron-back-outline'
 					size={height * 0.045}
